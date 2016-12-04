@@ -49,6 +49,7 @@ class comment:
 
 def timeline_parser():
     global user
+    comments_counter=0
     search_keywords=input("\n\nInsert your search keywords separated with commas:\n")
     search_keywords=search_keywords.lower().split(",")
 
@@ -79,22 +80,30 @@ def timeline_parser():
                 print (comments_text[index].get_text())
                 f.write("\n\n"+comments_text[index].find_previous_sibling().get_text())
                 f.write("\n\n"+comments_text[index].get_text()+"\n\n")
+                comments_counter=comments_counter+1
                 break
 
 
     #Used for taking addional info like "likes", shared links and others. Not formated info, putted at the end of the file results
-    print("\n\n---ADITIONAL INFO, SHARES AND LIKES---\n")
-    f.write("\n\n---ADITIONAL INFO, SHARES AND LIKES---\n")
+    print("\n\n--- ADDITIONAL INFO, SHARES AND LIKES ---\n")
+    f.write("\n\n--- ADDITIONAL INFO, SHARES AND LIKES ---\n")
     for date in dates_text:
         for keyword in search_keywords:
             if(keyword in date.next_element.next_element):
-                print(date.get_text())
-                print(date.next_element.next_element)
+                print("\n"+date.get_text())
+                print("\n"+date.next_element.next_element)
                 f.write("\n\n"+date.get_text())
                 f.write("\n\n"+date.next_element.next_element+"\n\n")
+                comments_counter=comments_counter+1
                 break
 
     f.close()
+
+    #End of the program
+    if(comments_counter>0):
+        print("\n\n---COMMENTS FOUND: ", comments_counter," ---\n")
+    else:
+        print("\n\n---NO COMMENTS FOUND---")
 
     #Facebook timeline page syntax
     #print("\nYou published "+str(len(comments_text))+" comments in your timeline")
