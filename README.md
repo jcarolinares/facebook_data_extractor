@@ -1,5 +1,5 @@
-# facebook_data_extractor
-A Python parser that extracts the info you want from tan official downloaded facebook archive
+# Facebook Data Extractor
+A Python parser that extracts the info you want from an official downloaded facebook archive
 
 Made by Julián Caro Linares
 
@@ -29,14 +29,14 @@ After that, you'll need to download your Facebook data.
 
 Follow the <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup"> official Facebook guide</a>, section "Download info":
 
-Download Your Info: This includes a lot of the same information available to you in your account and activity log, including your Timeline info, posts you have shared, messages, photos and more. Additionally, it includes information that is not available simply by logging into your account, like the ads you have clicked on, data like the IP addresses that are logged when you log into or out of Facebook, and more. To download your information, go to your Settings and click Download a copy of your Facebook data.
+"Download Your Info: This includes a lot of the same information available to you in your account and activity log, including your Timeline info, posts you have shared, messages, photos and more. Additionally, it includes information that is not available simply by logging into your account, like the ads you have clicked on, data like the IP addresses that are logged when you log into or out of Facebook, and more. To download your information, go to your Settings and click Download a copy of your Facebook data."
 
 
 You'll probably have to wait an email from Faccebook with the data link.
 
 When you had downloaded your facebook data, extract the file in the same folder of this program.
 
-Now executes the python program "facebook_data_extractor.py" using python3
+Now executes the python program "facebook_data_extractor.py" using python3:
 
 * Your facebook name ID is the name that comes in your facebook data folder:
   In the case "facebook-yournamessurnames" you should write "yournamessurnames"
